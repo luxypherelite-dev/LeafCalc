@@ -20,11 +20,16 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
+    - name: Debug Info
+      run: |
+        ls -la
+        ls -la gradle/wrapper/
+
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: bash gradlew assembleDebug --stacktrace
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
