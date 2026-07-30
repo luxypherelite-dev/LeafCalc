@@ -135,11 +135,4 @@ fun CalculatorScreen(onSecretTriggered: () -> Unit) {
     }
 }
 
-@Composable
-fun ControlCenterScreen(onBack: () -> Unit) {
-    Column(modifier = Modifier.fillMaxSize().padding(16.dp)) {
-        Text("Control Center", fontSize = 24.sp, fontWeight = FontWeight.Bold)
-        // Implementation of the grid and app management would go here
-        Button(onClick = onBack) { Text("Back to Calculator") }
-    }
-}
+
