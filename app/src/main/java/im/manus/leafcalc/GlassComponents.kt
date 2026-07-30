@@ -10,6 +10,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.Alignment
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -53,10 +56,10 @@ fun MossyButton(
     onClick: () -> Unit,
     content: @Composable () -> Unit
 ) {
-    // Simplified mossy button for now
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(50))
+            .clickable { onClick() }
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
@@ -67,6 +70,8 @@ fun MossyButton(
             )
             .border(1.dp, Color.White.copy(alpha = 0.2f), RoundedCornerShape(50))
     ) {
-        content()
+        Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
+            content()
+        }
     }
 }
