@@ -21,12 +21,12 @@ fun ControlCenterScreen(onBack: () -> Unit) {
         // Header
         Row(verticalAlignment = Alignment.CenterVertically) {
             IconButton(onClick = onBack) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Back", color = Color.White)
+                Icon(Icons.Default.ArrowBack, contentDescription = "Back", tint = Color.White)
             }
             Text("CONTROL CENTER", fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
             Spacer(modifier = Modifier.weight(1f))
             IconButton(onClick = {}) {
-                Icon(Icons.Default.Settings, contentDescription = "Settings", color = Color.White)
+                Icon(Icons.Default.Settings, contentDescription = "Settings", tint = Color.White)
             }
         }
 
@@ -68,13 +68,13 @@ fun StatItem(label: String, value: String) {
 @Composable
 fun ConfigTile(id: Int) {
     val (title, icon) = when(id) {
-        1 -> "Access Method" to Icons.Default.Lock
-        2 -> "Notice" to Icons.Default.Info
-        3 -> "Buttons" to Icons.Default.Edit
-        4 -> "UI Style" to Icons.Default.Palette
-        5 -> "Timer" to Icons.Default.Timer
-        6 -> "Advanced" to Icons.Default.Build
-        else -> "Module $id" to Icons.Default.Add
+        1 -> "Access Method" to Icons.Filled.Lock
+        2 -> "Notice" to Icons.Filled.Info
+        3 -> "Buttons" to Icons.Filled.Edit
+        4 -> "UI Style" to Icons.Filled.Palette
+        5 -> "Timer" to Icons.Filled.Timer
+        6 -> "Advanced" to Icons.Filled.Build
+        else -> "Module $id" to Icons.Filled.Add
     }
 
     GlassCard(modifier = Modifier.aspectRatio(1f)) {
